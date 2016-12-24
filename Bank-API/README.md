@@ -33,6 +33,8 @@ Security
 
 It have been created two adapter for authorization, but the HTTP basic authorization is enabled. If you wish to use Oauth2 authorization simply enter the dashboard and change it (it's also configured).
 
+The credentials are user: test password: test
+
 Aditional configuration
 ---------
 
@@ -44,6 +46,8 @@ Documentation
 Api documentation can be found at
 
 *  http://localhost:8080/apigility/swagger
+
+Use the authentication credentials test:test make tests.
 
 Tests
 ------------
