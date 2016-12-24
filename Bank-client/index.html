@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"/> 
+		<link rel="stylesheet" href="assets/css/custom.css"/> 
+		
+			
+		<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+		<script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+		<script type="text/javascript" src="bower_components/backbone/backbone.js"></script>
+		<script type="text/javascript" src="app/main.js"></script>
+		<script type="text/javascript" src="app/models/chargeModel.js"></script>
+		<script type="text/javascript" src="app/models/halCharges.js"></script>
+		<script type="text/javascript" src="app/models/messageModel.js"></script>
+		<script type="text/javascript" src="app/models/paginationModel.js"></script>
+		<script type="text/javascript" src="app/views/addChargeView.js"></script>
+		<script type="text/javascript" src="app/views/chargeListView.js"></script>
+		<script type="text/javascript" src="app/views/homeView.js"></script>
+		<script type="text/javascript" src="app/views/paginationView.js"></script>
+		<script type="text/javascript" src="app/views/singleChargeView.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Sample Bank</h1>
+		</div>
+		<div id="container" class="container">
+			<div class ="container">
+				<ul class="nav nav-tabs" >
+				  <li role="presentation" class="active" id="add-charge-tab">
+					<a href="#add-charge" >Add charge</a>
+				  </li>
+				  <li role="presentation" id="charge-list-tab">
+					<a href="#charge-list" >Charges list</a>
+				  </li>
+				</ul>
+				
+				<div id="tab-container"> </div>
+				
+			</div>
+		
+		</div>
+		
+		<script type="text/template" id="home-template" >		
+			
+			<h2>Welcome to the sample bank</h2>
+			
+		</script>
+		
+		<script type="text/template" id="message-template" >		
+			<div class="alert alert-<%= message.type%>" role="alert"><%= message.message%></div>
+		</script>
+		
+		<script type="text/template" id="add-charge-template" >	
+			<h2>Add new charge</h2>
+			<form class="form-inline">
+			  <div class="form-group" id="description-form-group">
+				<label class="sr-only" for="inputDescription">Description</label>
+				<input id="charge-description" type="text" class="form-control" id="inputDescription" placeholder="Description">
+			  </div>
+			  <div class="form-group" id="amount-form-group">
+				<label class="sr-only" for="inputAmount">Amount</label>
+				<div class="input-group">
+				  <div class="input-group-addon">€</div>
+				  <input id="charge-amount" type="text" class="form-control" id="inputAmount" placeholder="Amount">
+				  
+				</div>
+			  </div>
+			  <button id="add-charge-submit" type="submit" class="btn btn-primary">Add</button>
+			</form>	
+
+			<div id="message-container" class="bs-example-bg-classes"> </div>		
+		</script>
+		
+		
+		<script type="text/template" id="charge-list-template" >
+				<h2>Charge list</h2>	
+				<table class="table table-striped" >
+					<thead>
+						<td>Id</td>
+						<td>Descripción</td>
+						<td>Amount</td>
+						<td>Date</td>
+					</thead>
+					<tbody id="charge-list-container">
+					
+					</tbody>
+					
+				</table>
+				<div id="pagination-container"/>	
+				</div>
+			
+		</script>
+		
+		<script type="text/template" id="pagination-template" >
+			
+				<span>Page <%= pagination.currentPage %> of <%= pagination.totalPages %></span>
+				<nav aria-label="Page navigation">
+				  <ul class="pagination">
+					<li>
+					  <a href="#charge-list" aria-label="Previous" id="previous-pagination">
+						<span aria-hidden="true">&laquo;</span>
+					  </a>
+					</li>
+					
+					<li>
+					  <a href="#charge-list" aria-label="Next" id="next-pagination">
+						<span aria-hidden="true">&raquo;</span>
+					  </a>
+					</li>
+				  </ul>
+				</nav>
+			
+		</script>
+		
+		
+		<script type="text/template" id="single-charge-template" >
+			<tr>
+				<td><div class="charge-list-id"><%= charge.id %></div></td>
+				<td><div class="charge-list-description"><%= charge.description %></div></td>
+			
+				<td><div class="charge-list-amount"><%= charge.amount %></div></td>
+			
+				<td><div class="charge-list-timestamp"><%= charge.timestamp %></div></td>
+			</tr>
+			
+			
+		</script>
+
+		
+
+		
+		
+
+	</body>
+</html>

@@ -1,0 +1,4 @@
+default:
+  paths:
+    features:  behat/features
+    bootstrap: behat/features/bootstrap
