@@ -15,7 +15,7 @@ In order to run this application correctly, you need to activate this extensions
 Installation
 ------------
 
-I publish the file composer.lock, so it's not necesary to run a "composer update", a "composer install" is recomended,
+I publish the file composer.lock, so it's not necesary to run a **composer update**, a **composer install** is recomended,
 because you will download the same version of the dependencies that I have used in devepolment.
 
 * composer update //will recreate the file composer.lock
