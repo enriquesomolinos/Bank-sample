@@ -9,4 +9,4 @@ The other module is a client developed with Backbone.
 
 I've divided this project in two modules because client and server usually are stored in diferent machines.
 
-To see more details enter in the Bank-API and Bank-client modules and read their respectives Readme.md file.
+To see more details enter in the **Bank-API** and **Bank-client** modules and read their respectives Readme.md file.
